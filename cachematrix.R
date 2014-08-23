@@ -14,7 +14,8 @@ makeCacheMatrix <- function(X = matrix()) {
         # The inverse value is stored in the variable I
         I <- NULL
         
-        # set() sets the value of the matrix
+        # set() sets the value of the matrix, and initializes the cached value 
+        # of the inverse to NULL (values assigned in the parent environment)
         set <- function(Y) {
                 X <<- Y
                 I <<- NULL
@@ -23,7 +24,8 @@ makeCacheMatrix <- function(X = matrix()) {
         # get() retrieves the value of the matrix
         get <- function() X
         
-        # setInverse() sets the cached value of the inverse
+        # setInverse() sets the cached value of the inverse (in the parent
+        # environment)
         setInverse <- function(inverse) I <<- inverse
         
         # getInverse retrieves the cached value of the inverse
